@@ -1,7 +1,8 @@
 import React, { Components } from "react";
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { NavLink, Route } from "react-router-dom";
 import WallPostInfoBar from "./WallPostInfoBar";
+import { UserData } from "../../profile/data/UserData";
 
 const WallBox = styled.div`
   margin-top: 8px;
@@ -101,11 +102,11 @@ const WallPostImg = styled.img`
 const WallPost = () => {
   return (
     <WallContainer>
-      <UserAva src={process.env.PUBLIC_URL + "/img/1.png"} alt="UserAvaMini" />
+      <UserAva src={UserData.avatar} alt="UserAvaMini" />
       <WallPostContent>
         <WallPostHead>
-          <PostUserName>Every Interaction</PostUserName>
-          <PostUserTagName> @EveryInteract ●</PostUserTagName>
+          <PostUserName>{UserData.name}</PostUserName>
+          <PostUserTagName> {UserData.tag} ●</PostUserTagName>
           <PostUserPublishDate>2 Mar 2015</PostUserPublishDate>
         </WallPostHead>
         <WallPostText>
@@ -126,7 +127,7 @@ const Wall = () => {
   return (
     <WallBox>
       <WallMenu>
-        <WallLink to="/EveryInteraction">
+        <WallLink to="/EveryInteraction/Tweets">
           <span>Tweets</span>{" "}
         </WallLink>
         <WallLink to="/EveryInteraction">

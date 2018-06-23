@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { IconLocation, IconLink, IconJoined } from "../../Icons/Icons";
 import { NavLink } from "react-router-dom";
+import { UserData } from "../../profile/data/UserData";
 
 const LeftSideDiv = styled.div`
   margin-top: -190px;
@@ -18,12 +19,6 @@ const AvatarBlock = styled.img`
 const UserName = styled.h3`
   color: #14171a;
   margin: 10px 0 5px;
-
-  > img {
-    position: relative;
-    top: 3px;
-    margin-left: 5px;
-  }
 `;
 
 const UserTagName = styled.div`
@@ -33,7 +28,7 @@ const UserTagName = styled.div`
 `;
 
 const UserTagNameStatus = styled.div`
-  display: inline;
+  display: ${props => (UserData.isFollow ? "inline" : "none")};
   padding: 5px;
   color: #697787;
   font-size: 12px;
@@ -56,6 +51,13 @@ const UserLocation = styled.div`
     font-size: 14px;
     color: #697787;
   }
+`;
+
+const UserConfirmed = styled.img`
+  position: relative;
+  top: 3px;
+  margin-left: 5px;
+  display: ${props => (UserData.isConfirmed ? "inline-block" : "none")};
 `;
 
 const UserSite = styled.div`
@@ -133,28 +135,30 @@ const SocialButtonMessage = () => {
 const MainBlockLeft = () => {
   return (
     <LeftSideDiv>
-      <AvatarBlock src={process.env.PUBLIC_URL + "/img/1.png"} />
+      <AvatarBlock src={UserData.avatar} />
       <UserName>
-        <span>EveryInteraction</span>
-        <img src={process.env.PUBLIC_URL + "/img/Tick.png"} alt="Tick" />
+        <span>{UserData.name}</span>
+        <UserConfirmed
+          src={process.env.PUBLIC_URL + "/img/Tick.png"}
+          alt="Tick"
+        />
       </UserName>
-      <UserTagName>@EveryInteract </UserTagName>
+      <UserTagName>{UserData.tag}</UserTagName>
       <UserTagNameStatus> Follows you </UserTagNameStatus>
-      <UserInfo>
-        UX Design studio focussed problem solving creativity. Design to us is
-        how can we make things *work* amazing.
-      </UserInfo>
+      <UserInfo>{UserData.descriptionInfo}</UserInfo>
       <UserLocation>
         <img src={IconLocation} alt="Location" />
-        <span>London, UK</span>
+        <span>{UserData.location}</span>
       </UserLocation>
       <UserSite>
         <img src={IconLink} alt="Site" />
-        <UserSiteLink to="/EveryInteract">everyinteraction.com </UserSiteLink>
+        <UserSiteLink to="/EveryInteract">{UserData.site}</UserSiteLink>
       </UserSite>
       <UserJoined>
         <img src={IconJoined} alt="Joined" />
-        <span>Joined May 2008 </span>
+        <span>
+          Joined {UserData.monthJoined} {UserData.yearJoined}{" "}
+        </span>
       </UserJoined>
       <SocialButtons>
         <SocialButtonTweetTo />

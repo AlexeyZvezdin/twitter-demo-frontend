@@ -10,7 +10,11 @@ import Comments from "./source/Comments.png";
 import Envelope from "./source/Envelope.png";
 import Loves from "./source/Loves.png";
 import Retweet from "./source/Retweet.png";
+import Foll from "./source/Foll.png";
+import Videos from "./source/Videos.png";
 export {
+  Videos,
+  Foll,
   Loves,
   Retweet,
   Comments,

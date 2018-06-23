@@ -30,9 +30,7 @@ const NavContainer = styled.nav`
 `;
 
 const TwitterBird = styled.img`
-  left: 50%;
   top: 13px;
-  position: absolute;
   cursor: pointer;
 `;
 
@@ -68,37 +66,36 @@ const BarLink = styled(NavLink)`
   }
 `;
 
-export default class HeaderBar extends Component {
-  render() {
-    return (
-      <HeaderBlock>
-        <NavContainer>
-          <NavBar>
-            <BarLink to="/EveryInteract">
-              <img src={IconHome} alt="Icon Home" />
-              <span>Home</span>
-            </BarLink>
+const HeaderBar = () => {
+  return (
+    <HeaderBlock>
+      <NavContainer>
+        <NavBar>
+          <BarLink to="/EveryInteract">
+            <img src={IconHome} alt="Icon Home" />
+            <span>Home</span>
+          </BarLink>
 
-            <BarLink to="/EveryInteract">
-              <img src={IconMoments} alt="Icon Moments" />
-              <span>Moments</span>
-            </BarLink>
+          <BarLink to="/EveryInteract">
+            <img src={IconMoments} alt="Icon Moments" />
+            <span>Moments</span>
+          </BarLink>
 
-            <BarLink to="/EveryInteract">
-              <img src={IconNotifications} alt="Icon Notifications" />
-              <span> Notifications</span>
-            </BarLink>
+          <BarLink to="/EveryInteract">
+            <img src={IconNotifications} alt="Icon Notifications" />
+            <span> Notifications</span>
+          </BarLink>
 
-            <BarLink to="/EveryInteract">
-              <img src={IconMessages} alt="Icon Messages" />
-              <span>Messages</span>
-            </BarLink>
-          </NavBar>
-          <SearchBar />
-        </NavContainer>
-
+          <BarLink to="/EveryInteract">
+            <img src={IconMessages} alt="Icon Messages" />
+            <span>Messages</span>
+          </BarLink>
+        </NavBar>
         <TwitterBird src={TwitterLogo} alt="Twitter" />
-      </HeaderBlock>
-    );
-  }
-}
+        <SearchBar />
+      </NavContainer>
+    </HeaderBlock>
+  );
+};
+
+export default HeaderBar;

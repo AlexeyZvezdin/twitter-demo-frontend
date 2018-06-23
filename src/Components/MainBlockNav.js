@@ -22,11 +22,11 @@ const MainNavBar = () => {
     <NavBar>
       <Row>
         <CommonBlock>
-          <AsideBlock toright />
+          <AsideBlock toRight />
           <CentralBlock>
             <MainBlockMenu />
           </CentralBlock>
-          <AsideBlock toright>
+          <AsideBlock toRight>
             <RightBlockMenu />
           </AsideBlock>
         </CommonBlock>

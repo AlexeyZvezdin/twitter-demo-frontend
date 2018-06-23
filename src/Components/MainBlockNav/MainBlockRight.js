@@ -2,11 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
-const RightSideContainer = styled.div`
-  display: block;
-`;
-
-const RightSideDiv = styled.div`
+const RightSide = styled.div`
   display: flex;
   position: relative;
   align-items: center;
@@ -54,13 +50,36 @@ const DropDownButton = styled.button`
 //dropdown
 
 const RightMenu = styled.div`
-  background: blue;
-  widht: 100px;
-  height: 100px;
+  background: #e6ecf0;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
   display: ${props => (props.isToggleOn ? "block" : "none")};
   position: absolute;
   top: 60px;
-  right: 70px;
+  right: 0px;
+`;
+
+const MenuBox = styled.div`
+  background: white;
+  margin: 3px 0;
+  padding: 5px 0;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+`;
+
+const Action = styled.button`
+  margin: 0;
+  outline: none;
+  background: white;
+  border: none;
+  cursor: pointer;
+  color: #697787;
+  font-size: 14px;
+  :hover {
+    background: #1da1f2;
+  }
 `;
 
 class RightBlockMenu extends React.Component {
@@ -78,9 +97,9 @@ class RightBlockMenu extends React.Component {
 
   render() {
     return (
-      <RightSideDiv>
+      <RightSide>
         <ButtonFollow>
-          <ButtonFollowLink to="/EveryInteraction">Toggle</ButtonFollowLink>
+          <ButtonFollowLink to="/EveryInteraction">Follow</ButtonFollowLink>
         </ButtonFollow>
         <DropDownButton onClick={this.handleClick}>
           <img
@@ -88,8 +107,22 @@ class RightBlockMenu extends React.Component {
             src={process.env.PUBLIC_URL + "./img/Icon_ More.png"}
           />
         </DropDownButton>
-        <RightMenu isToggleOn={this.state.isToggleOn}>Xuita </RightMenu>
-      </RightSideDiv>
+        <RightMenu isToggleOn={this.state.isToggleOn}>
+          <MenuBox>
+            <Action> Send Tweet @incredible India </Action>
+            <Action> Send Tweet @incredible India </Action>
+          </MenuBox>
+          <MenuBox>
+            <Action> Send Tweet @incredible India </Action>
+            <Action> Send Tweet @incredible India </Action>
+            <Action> Send Tweet @incredible India </Action>
+          </MenuBox>
+          <MenuBox>
+            <Action> Send Tweet @incredible India </Action>
+            <Action> Send Tweet @incredible India </Action>
+          </MenuBox>
+        </RightMenu>
+      </RightSide>
     );
   }
 }
