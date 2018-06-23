@@ -2,11 +2,18 @@ import React, { Components } from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import WallPostInfoBar from "./WallPostInfoBar";
+
+const WallBox = styled.div`
+  margin-top: 8px;
+  margin-left: 4px;
+`;
+
 const WallMenu = styled.div`
   display: flex;
   height: 59px;
   flex-direction: row;
   justify-content: flex-start;
+  background: white;
   margin-bottom: 2px;
 `;
 const WallLink = styled(NavLink)`
@@ -27,6 +34,7 @@ const WallLink = styled(NavLink)`
 const WallContent = styled.div`
   width: 100%;
   height: 1000px;
+  background: white;
 `;
 
 const WallContainer = styled.div`
@@ -116,7 +124,7 @@ const WallPost = () => {
 
 const Wall = () => {
   return (
-    <React.Fragment>
+    <WallBox>
       <WallMenu>
         <WallLink to="/EveryInteraction">
           <span>Tweets</span>{" "}
@@ -134,7 +142,7 @@ const Wall = () => {
       <WallContent>
         <WallPost />
       </WallContent>
-    </React.Fragment>
+    </WallBox>
   );
 };
 

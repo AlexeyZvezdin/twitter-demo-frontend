@@ -8,6 +8,7 @@ import HeaderBar from "./Components/HeaderBar.js";
 import BackPic from "./Components/BackPic.js";
 import MainBlockNav from "./Components/MainBlockNav";
 import MainBlock from "./Components/MainBlock";
+
 class App extends Component {
   render() {
     return (
@@ -21,14 +22,12 @@ class App extends Component {
               name="viewport"
               content="width=device-width, initial-scale=1, shrink-to-fit=no"
             />
-
             <title>Home, Dear Home</title>
           </Helmet>
           <Grid>
             <Row>
               <HeaderBar />
             </Row>
-
             <Row>
               <BackPic
                 alt="Picture"

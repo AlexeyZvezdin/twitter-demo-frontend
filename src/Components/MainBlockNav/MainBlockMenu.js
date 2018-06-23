@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
-const MainWallNav = styled.ul`
+const MainWallNav = styled.nav`
   padding-left: 0;
   padding-right: 0;
   margin-top: 0;
@@ -10,10 +10,6 @@ const MainWallNav = styled.ul`
   height: 59px;
   margin-left: 0px;
   display: inline-flex;
-  > li {
-    list-style: none;
-    color: #788a98;
-  }
 `;
 
 const MainWallButton = styled(NavLink)`
@@ -70,58 +66,51 @@ class MainBlockMenu extends Component {
   render() {
     return (
       <MainWallNav>
-        <li>
-          <MainWallButton
-            to="/EveryInteract"
-            exact
-            activeStyle={{ color: "green" }}
-          >
-            <SmallMainWallButtonText> Tweets</SmallMainWallButtonText>
+        <MainWallButton
+          to="/EveryInteract"
+          exact
+          activeStyle={{ color: "green" }}
+        >
+          <SmallMainWallButtonText> Tweets</SmallMainWallButtonText>
 
-            <BigMainWallButtonText>8,858</BigMainWallButtonText>
-          </MainWallButton>
-        </li>
-        <li>
-          <MainWallButton
-            to="/EveryInteract"
-            exact
-            activeStyle={{ color: "orange" }}
-          >
-            <SmallMainWallButtonText>Following </SmallMainWallButtonText>
-            <BigMainWallButtonText>721</BigMainWallButtonText>
-          </MainWallButton>
-        </li>
+          <BigMainWallButtonText>8,858</BigMainWallButtonText>
+        </MainWallButton>
 
-        <li>
-          <MainWallButton
-            to="/EveryInteract"
-            exact
-            activeStyle={{ color: "cyan" }}
-          >
-            <SmallMainWallButtonText>Followers</SmallMainWallButtonText>
-            <BigMainWallButtonText>1,815</BigMainWallButtonText>
-          </MainWallButton>
-        </li>
-        <li>
-          <MainWallButton
-            to="/EveryInteract"
-            exact
-            activeStyle={{ color: "tomato" }}
-          >
-            <SmallMainWallButtonText> Likes </SmallMainWallButtonText>
-            <BigMainWallButtonText>460</BigMainWallButtonText>
-          </MainWallButton>
-        </li>
-        <li>
-          <MainWallButton
-            to="/EveryInteract"
-            exact
-            activeStyle={{ color: "tomato" }}
-          >
-            <SmallMainWallButtonText> Lists</SmallMainWallButtonText>
-            <BigMainWallButtonText>2</BigMainWallButtonText>
-          </MainWallButton>
-        </li>
+        <MainWallButton
+          to="/EveryInteract"
+          exact
+          activeStyle={{ color: "orange" }}
+        >
+          <SmallMainWallButtonText>Following </SmallMainWallButtonText>
+          <BigMainWallButtonText>721</BigMainWallButtonText>
+        </MainWallButton>
+
+        <MainWallButton
+          to="/EveryInteract"
+          exact
+          activeStyle={{ color: "cyan" }}
+        >
+          <SmallMainWallButtonText>Followers</SmallMainWallButtonText>
+          <BigMainWallButtonText>1,815</BigMainWallButtonText>
+        </MainWallButton>
+
+        <MainWallButton
+          to="/EveryInteract"
+          exact
+          activeStyle={{ color: "tomato" }}
+        >
+          <SmallMainWallButtonText> Likes </SmallMainWallButtonText>
+          <BigMainWallButtonText>460</BigMainWallButtonText>
+        </MainWallButton>
+
+        <MainWallButton
+          to="/EveryInteract"
+          exact
+          activeStyle={{ color: "tomato" }}
+        >
+          <SmallMainWallButtonText> Lists</SmallMainWallButtonText>
+          <BigMainWallButtonText>2</BigMainWallButtonText>
+        </MainWallButton>
       </MainWallNav>
     );
   }

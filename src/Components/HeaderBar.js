@@ -3,26 +3,25 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import SearchBar from "./Header/SearchBar";
 import {
-  IconMessagesSVG,
-  IconHomeSVG,
-  IconNotificationsSVG,
-  IconMomentsSVG,
-  TwitterLogoSVG
-} from "../svg/Icons.jsx";
+  IconMessages,
+  IconHome,
+  IconNotifications,
+  IconMoments,
+  TwitterLogo
+} from "../Icons/Icons";
 
 const HeaderBlock = styled.div`
   display: flex;
   z-index: 999;
   background: #ffffff;
   height: 45px;
-
   top: 0;
   left: 0;
   right: 0;
   border-bottom: 1px solid grey;
 `;
 
-const CommonContainer = styled.div`
+const NavContainer = styled.nav`
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
@@ -37,17 +36,16 @@ const TwitterBird = styled.img`
   cursor: pointer;
 `;
 
-const HeaderNavBar = styled.div`
+const NavBar = styled.div`
   display: flex;
   padding-left: 0;
   margin: 0;
   padding: 0;
   background: white;
   height: 45px;
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
 `;
 
-const HeaderBarLink = styled(NavLink)`
+const BarLink = styled(NavLink)`
   display: flex;
   align-items: center;
   background-color: transparent;
@@ -74,32 +72,32 @@ export default class HeaderBar extends Component {
   render() {
     return (
       <HeaderBlock>
-        <CommonContainer>
-          <HeaderNavBar>
-            <HeaderBarLink to="/EveryInteract">
-              <img src={IconHomeSVG} alt="Icon Home" />
-              <span> Home</span>
-            </HeaderBarLink>
+        <NavContainer>
+          <NavBar>
+            <BarLink to="/EveryInteract">
+              <img src={IconHome} alt="Icon Home" />
+              <span>Home</span>
+            </BarLink>
 
-            <HeaderBarLink to="/EveryInteract">
-              <img src={IconMomentsSVG} alt="Icon Moments" />
-              <span> Moments</span>
-            </HeaderBarLink>
+            <BarLink to="/EveryInteract">
+              <img src={IconMoments} alt="Icon Moments" />
+              <span>Moments</span>
+            </BarLink>
 
-            <HeaderBarLink to="/EveryInteract">
-              <img src={IconNotificationsSVG} alt="Icon Notifications" />
+            <BarLink to="/EveryInteract">
+              <img src={IconNotifications} alt="Icon Notifications" />
               <span> Notifications</span>
-            </HeaderBarLink>
+            </BarLink>
 
-            <HeaderBarLink to="/EveryInteract">
-              <img src={IconMessagesSVG} alt="Icon Messages" />
+            <BarLink to="/EveryInteract">
+              <img src={IconMessages} alt="Icon Messages" />
               <span>Messages</span>
-            </HeaderBarLink>
-          </HeaderNavBar>
+            </BarLink>
+          </NavBar>
           <SearchBar />
-        </CommonContainer>
+        </NavContainer>
 
-        <TwitterBird src={TwitterLogoSVG} alt="Twitter" />
+        <TwitterBird src={TwitterLogo} alt="Twitter" />
       </HeaderBlock>
     );
   }

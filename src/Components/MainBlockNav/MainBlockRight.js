@@ -8,6 +8,7 @@ const RightSideContainer = styled.div`
 
 const RightSideDiv = styled.div`
   display: flex;
+  position: relative;
   align-items: center;
   background: white;
 `;
@@ -43,41 +44,54 @@ const DropDownButton = styled.button`
   }
   :hover {
     border: 1px solid #1da1f2;
+    cursor: pointer;
   }
   :active {
     border: 1px solid #1da1f2;
   }
 `;
 
-// const DropDown = styled.ul`
-// display: none;
-// :active {
-// display: block;
+//dropdown
 
-// }
+const RightMenu = styled.div`
+  background: blue;
+  widht: 100px;
+  height: 100px;
+  display: ${props => (props.isToggleOn ? "block" : "none")};
+  position: absolute;
+  top: 60px;
+  right: 70px;
+`;
 
-// `;
+class RightBlockMenu extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { isToggleOn: false };
 
-// const RightMenu = () => {
-//   return (
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick() {
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn
+    }));
+  }
 
-//   );
-// }
+  render() {
+    return (
+      <RightSideDiv>
+        <ButtonFollow>
+          <ButtonFollowLink to="/EveryInteraction">Toggle</ButtonFollowLink>
+        </ButtonFollow>
+        <DropDownButton onClick={this.handleClick}>
+          <img
+            alt="drop-down-menu"
+            src={process.env.PUBLIC_URL + "./img/Icon_ More.png"}
+          />
+        </DropDownButton>
+        <RightMenu isToggleOn={this.state.isToggleOn}>Xuita </RightMenu>
+      </RightSideDiv>
+    );
+  }
+}
 
-const MainBlockRight = () => {
-  return (
-    <RightSideDiv>
-      <ButtonFollow>
-        <ButtonFollowLink to="/EveryInteraction">Follow</ButtonFollowLink>
-      </ButtonFollow>
-      <DropDownButton>
-        <img
-          alt="drop-down-menu"
-          src={process.env.PUBLIC_URL + "./img/Icon_ More.png"}
-        />
-      </DropDownButton>
-    </RightSideDiv>
-  );
-};
-
-export default MainBlockRight;
+export default RightBlockMenu;

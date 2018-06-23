@@ -1,5 +1,6 @@
 import React, { Components } from "react";
 import styled from "styled-components";
+import { Comments, Envelope, Loves, Retweet } from "../../Icons/Icons";
 
 const WallPostInfo = styled.div`
   display: flex;
@@ -10,11 +11,13 @@ const WallPostInfo = styled.div`
 const CommentIcon = styled.img`
   margin-right: 60px;
   height: 14px;
+  cursor: pointer;
 `;
 
 const RetweetIcon = styled.img`
   margin-right: 14px;
   height: 14px;
+  cursor: pointer;
 `;
 
 const RetweetNumber = styled.span`
@@ -27,6 +30,7 @@ const RetweetNumber = styled.span`
 const LikeIcon = styled.img`
   margin-right: 14px;
   height: 14px;
+  cursor: pointer;
 `;
 
 const LikeIconNumber = styled.span`
@@ -38,23 +42,18 @@ const LikeIconNumber = styled.span`
 
 const MessageIcon = styled.img`
   height: 14px;
+  cursor: pointer;
 `;
 
 const WallPostInfoBar = () => {
   return (
     <WallPostInfo>
-      <CommentIcon
-        src={process.env.PUBLIC_URL + "./img/icons/Icon_ Comments.png"}
-      />
-      <RetweetIcon
-        src={process.env.PUBLIC_URL + "./img/Icons/Icon_ Retweet.png"}
-      />
+      <CommentIcon src={Comments} />
+      <RetweetIcon src={Retweet} />
       <RetweetNumber> 17 </RetweetNumber>
-      <LikeIcon src={process.env.PUBLIC_URL + "./img/Icons/Icon_  Loves.png"} />
+      <LikeIcon src={Loves} />
       <LikeIconNumber> 61 </LikeIconNumber>
-      <MessageIcon
-        src={process.env.PUBLIC_URL + "./img/Icons/Icon_ Envelope.png"}
-      />
+      <MessageIcon src={Envelope} />
     </WallPostInfo>
   );
 };

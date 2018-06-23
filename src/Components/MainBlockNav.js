@@ -9,16 +9,17 @@ import {
   CentralBlock
 } from "./Grid";
 import MainBlockMenu from "./MainBlockNav/MainBlockMenu";
+import RightBlockMenu from "./MainBlockNav/MainBlockRight";
 
-import MainBLockRight from "./MainBlockNav/MainBlockRight";
-
-const UnderLine = styled.div`
-  border-bottom: 3px solid lightgrey;
+const NavBar = styled.div`
+  border-bottom: 1px solid #b0b8be;
+  box-shadow: 10px 0 3px 0 #b0b8be;
+  background: white;
 `;
 
 const MainNavBar = () => {
   return (
-    <UnderLine>
+    <NavBar>
       <Row>
         <CommonBlock>
           <AsideBlock toright />
@@ -26,12 +27,11 @@ const MainNavBar = () => {
             <MainBlockMenu />
           </CentralBlock>
           <AsideBlock toright>
-            <MainBLockRight />
+            <RightBlockMenu />
           </AsideBlock>
         </CommonBlock>
       </Row>
-    </UnderLine>
+    </NavBar>
   );
 };
 export default MainNavBar;
-export { CommonBlock };

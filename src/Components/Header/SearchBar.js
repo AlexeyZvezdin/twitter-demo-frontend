@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import styled, { css } from "styled-components";
-import IconMagnifier from "../../svg/source/Icon_ Magnifier.svg";
+import IconMagnifier from "../../Icons/source/Magnifier.svg";
 
 const RightContainer = styled.div`
   display: flex;
   align-items: center;
 `;
 
-const SearchDiv = styled.div`
+const SearchBox = styled.div`
   background-color: #f5f8fa;
   padding: 0;
 `;
@@ -19,7 +19,6 @@ const SearchForm = styled.form`
   width: 220px;
   background-color: #f5f8fa;
   padding: 5px;
-
   margin-right: 16px;
   border: 1px solid #e6ecf0;
   box-sizing: border-box;
@@ -36,7 +35,10 @@ const SearchForm = styled.form`
   }
 `;
 
-const SearchInput = styled.input`
+const SearchInput = styled.input.attrs({
+  placeholder: "Search Twitter",
+  type: "Text"
+})`
   background-color: transparent;
   outline: none;
   border: none;
@@ -45,13 +47,15 @@ const SearchInput = styled.input`
 
 const SearchButton = styled.button`
   outline: none;
-  background: url('${IconMagnifier}')  transparent no-repeat center;
+  background: url('${IconMagnifier}') transparent no-repeat center;
   background-size: contain;
   border: none;
   cursor: pointer;
 `;
 
-const MiniUserAvatar = styled.img`
+const UserAvatar = styled.img.attrs({
+  src: process.env.PUBLIC_URL + "/img/1.png"
+})`
   margin: 8px 16px;
   height: 30px;
   border-radius: 50%;
@@ -84,13 +88,13 @@ const TweetButton = styled.button`
 
 const SearchBar = () => (
   <RightContainer>
-    <SearchDiv>
+    <SearchBox>
       <SearchForm>
-        <SearchInput placeholder="Search Twitter" type="Text" />
+        <SearchInput />
         <SearchButton />
       </SearchForm>
-    </SearchDiv>
-    <MiniUserAvatar src={process.env.PUBLIC_URL + "/img/1.png"} />
+    </SearchBox>
+    <UserAvatar />
     <TweetButton> Tweet </TweetButton>
   </RightContainer>
 );

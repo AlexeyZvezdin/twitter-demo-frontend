@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { IconLocation, IconLink, IconJoined } from "../../svg/Icons.jsx";
+import { IconLocation, IconLink, IconJoined } from "../../Icons/Icons";
 import { NavLink } from "react-router-dom";
 
 const LeftSideDiv = styled.div`
