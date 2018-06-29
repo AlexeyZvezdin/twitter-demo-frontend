@@ -20,7 +20,7 @@ const AsideBlock = styled.div`
   display: flex;
   flex-grow: 2;
   min-width: 300px;
-
+  flex-direction: ${props => (props.col ? "column" : "")}
   justify-content: ${props => (props.toRight ? "flex-end" : "")};
 `;
 const CentralBlock = styled.div`

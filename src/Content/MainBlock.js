@@ -1,14 +1,14 @@
 import React, { Components } from "react";
 import styled from "styled-components";
 import { CommonBlock, Row, AsideBlock, CentralBlock } from "../Grid";
-import LeftBlockProfile from "./LeftBlockProfile";
+import UserProfile from "./UserProfile";
 import Wall from "../Wall/Wall.js";
 import { Followers } from "../Profile/data/EveryInteractData";
 import { NavLink, Route } from "react-router-dom";
-import LeftBlockFollowers from "./LeftBlockFollowers";
-import LeftBlockPhotos from "./LeftBlockPhotos";
-import Photos from "./LeftBlockPhotos";
-import RightFollowBlock from "./RightFollowBlock";
+import UserFollowers from "./UserFollowers";
+import Photos from "./UserPhotos";
+import FollowBlock from "./FollowBlock";
+import TrendBlock from "./Trends";
 
 const MainBlock = () => {
   return (
@@ -16,8 +16,8 @@ const MainBlock = () => {
       <CommonBlock>
         <AsideBlock toRight>
           <Row>
-            <LeftBlockProfile />
-            <LeftBlockFollowers />
+            <UserProfile />
+            <UserFollowers />
             <Photos />
           </Row>
         </AsideBlock>
@@ -26,8 +26,9 @@ const MainBlock = () => {
             <Route path="/everyinteract/tweets" children={Wall} />
           </Wall>
         </CentralBlock>
-        <AsideBlock toRight>
-          <RightFollowBlock />
+        <AsideBlock col>
+          <FollowBlock />
+          <TrendBlock />
         </AsideBlock>
       </CommonBlock>
     </Row>

@@ -6,7 +6,7 @@ import UserData from "../Profile/data/EveryInteractData";
 const FollowBox = styled.div`
   width: 290px;
   height: 362px;
-  margin: 9px 10px;
+  margin: 10px 10px;
   background: white;
 `;
 
@@ -49,7 +49,7 @@ const AdvisedUser = styled.div`
 
 // const UserAva = styled.img.attrs((alt: "AppleInsider"), (src: {}))``;
 
-class RightFollowBlock extends Component {
+class FollowBlock extends Component {
   render() {
     return (
       <FollowBox>
@@ -66,4 +66,4 @@ class RightFollowBlock extends Component {
   }
 }
 
-export default RightFollowBlock;
+export default FollowBlock;

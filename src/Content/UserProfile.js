@@ -132,7 +132,7 @@ const SocialButtonMessage = () => {
   );
 };
 
-const LeftBlockProfile = () => {
+const UserProfile = () => {
   return (
     <LeftSideDiv>
       <AvatarBlock src={EveryInteract.avatar} />
@@ -165,4 +165,4 @@ const LeftBlockProfile = () => {
   );
 };
 
-export default LeftBlockProfile;
+export default UserProfile;

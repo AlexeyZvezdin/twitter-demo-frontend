@@ -37,7 +37,7 @@ const Photo = styled.img`
 
 const PhotCont = styled.div``;
 
-const Phot = () => {
+const PhotoWrap = () => {
   return <PhotCont>{PhotosSrc.map(source => <Photo src={source} />)}</PhotCont>;
 };
 
@@ -49,7 +49,7 @@ const Photos = () => {
         <PhotosIcon src={Videos} />
         <YourVideos to="/EveryInteract">552 Photos and Videos</YourVideos>
       </PhotosFeed>
-      <Phot />
+      <PhotoWrap />
     </PhotosBox>
   );
 };

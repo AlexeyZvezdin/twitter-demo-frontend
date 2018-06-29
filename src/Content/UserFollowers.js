@@ -46,7 +46,7 @@ const FollowersBlock = () => {
   );
 };
 
-const LeftBlockFollowers = () => {
+const UserFollowers = () => {
   return (
     <FollowersBox>
       <FollowerFeed>
@@ -60,4 +60,4 @@ const LeftBlockFollowers = () => {
   );
 };
 
-export default LeftBlockFollowers;
+export default UserFollowers;
