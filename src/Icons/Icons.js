@@ -10,11 +10,20 @@ import Comments from "./source/Comments.png";
 import Envelope from "./source/Envelope.png";
 import Loves from "./source/Loves.png";
 import Retweet from "./source/Retweet.png";
-import Foll from "./source/Foll.png";
+import Followers from "./source/Followers.png";
 import Videos from "./source/Videos.png";
+import More from "./source/More.png";
+import Delete from "./source/Delete.png";
+import People from "./source/People.png";
+import Confirmed from "./source/Confirmed.png";
+
 export {
+  Confirmed,
+  People,
+  Delete,
+  More,
   Videos,
-  Foll,
+  Followers,
   Loves,
   Retweet,
   Comments,

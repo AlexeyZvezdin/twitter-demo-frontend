@@ -1,13 +1,10 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Helmet } from "react-helmet";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import "normalize.css";
-import { BodyBlock, Grid, Row } from "./Components/Grid";
-import HeaderBar from "./Components/HeaderBar.js";
-import BackPic from "./Components/BackPic.js";
-import MainBlockNav from "./Components/MainBlockNav";
-import MainBlock from "./Components/MainBlock";
+import { BodyBlock } from "./Grid";
+import Profile from "./Profile";
 
 class App extends Component {
   render() {
@@ -24,23 +21,8 @@ class App extends Component {
             />
             <title>Home, Dear Home</title>
           </Helmet>
-          <Grid>
-            <Row>
-              <HeaderBar />
-            </Row>
-            <Row>
-              <BackPic
-                alt="Picture"
-                src={process.env.PUBLIC_URL + "./img/back.png"}
-              />
-            </Row>
-            <Row>
-              <MainBlockNav />
-            </Row>
-            <Row>
-              <MainBlock />
-            </Row>
-          </Grid>
+          <Route path="/everyinteract" component={Profile} />
+          <Redirect from="/" to="everyinteract" />
         </BodyBlock>
       </Router>
     );
