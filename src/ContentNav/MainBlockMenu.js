@@ -47,47 +47,33 @@ const SmallMainWallButtonText = styled.p`
   margin: 0;
   color: #788a98;
 `;
-// Right Menu Container
-
-const RightMenuContainer = styled.div`
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row-reverse;
-`;
-
-const EmptyCont = styled.div`
-  background: lightblue;
-  height: 60px;
-`;
-
-const ButtonFollow = styled.button``;
 
 class MainBlockMenu extends Component {
   render() {
     return (
       <MainWallNav>
-        <MainWallButton to="/everyinteract/tweets">
-          <SmallMainWallButtonText> Tweets</SmallMainWallButtonText>
+        <MainWallButton to="/EveryInteract/tweets">
+          <SmallMainWallButtonText>Tweets</SmallMainWallButtonText>
 
           <BigMainWallButtonText>8,858</BigMainWallButtonText>
         </MainWallButton>
 
-        <MainWallButton to="/everyinteract/following" exact>
+        <MainWallButton to="/EveryInteract/following" exact>
           <SmallMainWallButtonText>Following</SmallMainWallButtonText>
           <BigMainWallButtonText>721</BigMainWallButtonText>
         </MainWallButton>
 
-        <MainWallButton to="/iveryinteract/followers" exact>
+        <MainWallButton to="/EveryInteract/followers" exact>
           <SmallMainWallButtonText>Followers</SmallMainWallButtonText>
           <BigMainWallButtonText>1,815</BigMainWallButtonText>
         </MainWallButton>
 
-        <MainWallButton to="/everyinteract/likes" exact>
+        <MainWallButton to="/EveryInteract/likes" exact>
           <SmallMainWallButtonText> Likes </SmallMainWallButtonText>
           <BigMainWallButtonText>460</BigMainWallButtonText>
         </MainWallButton>
 
-        <MainWallButton to="/everyinteract/lists" exact>
+        <MainWallButton to="/EveryInteract/lists" exact>
           <SmallMainWallButtonText> Lists</SmallMainWallButtonText>
           <BigMainWallButtonText>2</BigMainWallButtonText>
         </MainWallButton>

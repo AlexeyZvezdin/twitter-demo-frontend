@@ -15,17 +15,17 @@ class Profile extends Component {
       <Grid>
         <Row>
           <HeaderBar />
-        </Row>
-        <Row>
+          {/* </Row>
+        <Row> */}
           <BackPic
             alt="Picture"
-            src={`/${process.env.PUBLIC_URL + "./img/back.png"}`}
+            src={`/${process.env.PUBLIC_URL + "./img/EveryInteract/back.png"}`}
           />
-        </Row>
-        <Row>
+          {/* </Row>
+        <Row> */}
           <MainBlockNav />
-        </Row>
-        <Row>
+          {/* </Row>
+        <Row> */}
           <MainBlock />
         </Row>
       </Grid>

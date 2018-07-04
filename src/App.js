@@ -1,10 +1,24 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Helmet } from "react-helmet";
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch
+} from "react-router-dom";
 import "normalize.css";
 import { BodyBlock } from "./Grid";
 import Profile from "./Profile";
+
+const NoPage = ({ location }) => (
+  <React.Fragment>
+    <h3>
+      {" "}
+      No match for <code>{location.pathname}</code>
+    </h3>
+  </React.Fragment>
+);
 
 class App extends Component {
   render() {
@@ -21,8 +35,12 @@ class App extends Component {
             />
             <title>Home, Dear Home</title>
           </Helmet>
-          <Route path="/everyinteract" component={Profile} />
-          <Redirect from="/" to="everyinteract" />
+          <Switch>
+            <Route path="/EveryInteract" component={Profile} />
+            <Redirect from="/" to="/EveryInteract/tweets" />
+            <Redirect from="/EveryInteract" to="/EveryInteract/tweets" />
+            <Route component={NoPage} />
+          </Switch>
         </BodyBlock>
       </Router>
     );

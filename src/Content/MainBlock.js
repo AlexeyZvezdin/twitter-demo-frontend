@@ -2,13 +2,14 @@ import React, { Components } from "react";
 import styled from "styled-components";
 import { CommonBlock, Row, AsideBlock, CentralBlock } from "../Grid";
 import UserProfile from "./UserProfile";
-import Wall from "../Wall/Wall.js";
+import Wall from "../Wall/TweetWall";
 import { Followers } from "../Profile/data/EveryInteractData";
 import { NavLink, Route } from "react-router-dom";
 import UserFollowers from "./UserFollowers";
 import Photos from "./UserPhotos";
 import FollowBlock from "./FollowBlock";
 import TrendBlock from "./Trends";
+import Footer from "./Footer";
 
 const MainBlock = () => {
   return (
@@ -22,13 +23,16 @@ const MainBlock = () => {
           </Row>
         </AsideBlock>
         <CentralBlock>
-          <Wall>
-            <Route path="/everyinteract/tweets" children={Wall} />
-          </Wall>
+          <Route path="/EveryInteract/tweets" component={Wall} />
+          <Route path="/EveryInteract/following" component={Wall} />
+          <Route path="/EveryInteract/followers" component={Wall} />
+          <Route path="/EveryInteract/likes" component={Wall} />
+          <Route path="/EveryInteract/lists" component={Wall} />
         </CentralBlock>
         <AsideBlock col>
           <FollowBlock />
           <TrendBlock />
+          <Footer />
         </AsideBlock>
       </CommonBlock>
     </Row>

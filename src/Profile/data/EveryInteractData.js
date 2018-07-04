@@ -12,25 +12,25 @@ const EveryInteract = {
   site: "everyinteraction.com",
   yearJoined: 2008,
   monthJoined: "May",
-  avatar: `${publicUrl}/img/ava.png`
+  avatar: `${publicUrl}/img/EveryInteract/ava.png`
 };
 
 const FollowersSrc = [
-  `${publicUrl}/img/followers/1.png`,
-  `${publicUrl}/img/followers/2.png`,
-  `${publicUrl}/img/followers/3.png`,
-  `${publicUrl}/img/followers/4.png`,
-  `${publicUrl}/img/followers/5.png`,
-  `${publicUrl}/img/followers/6.png`
+  `${publicUrl}/img/EveryInteract/followers/1.png`,
+  `${publicUrl}/img/EveryInteract/followers/2.png`,
+  `${publicUrl}/img/EveryInteract/followers/3.png`,
+  `${publicUrl}/img/EveryInteract/followers/4.png`,
+  `${publicUrl}/img/EveryInteract/followers/5.png`,
+  `${publicUrl}/img/EveryInteract/followers/6.png`
 ];
 
 const PhotosSrc = [
-  `${publicUrl}/img/photos/1.png`,
-  `${publicUrl}/img/photos/2.png`,
-  `${publicUrl}/img/photos/3.png`,
-  `${publicUrl}/img/photos/4.png`,
-  `${publicUrl}/img/photos/5.png`,
-  `${publicUrl}/img/photos/6.png`
+  `${publicUrl}/img/EveryInteract/photos/1.png`,
+  `${publicUrl}/img/EveryInteract/photos/2.png`,
+  `${publicUrl}/img/EveryInteract/photos/3.png`,
+  `${publicUrl}/img/EveryInteract/photos/4.png`,
+  `${publicUrl}/img/EveryInteract/photos/5.png`,
+  `${publicUrl}/img/EveryInteract/photos/6.png`
 ];
 
 const UserWallPosts = [
@@ -41,7 +41,7 @@ const UserWallPosts = [
     text: `We've made some more resourses for all you wonderful #design folk everyinteraction.com/resourses/ #webdesign #UI`,
     //написать скрипт чтоб выделял ссылки и хештеги синим
     img: {
-      src: process.env.PUBLIC_URL + "./img/post.png",
+      src: process.env.PUBLIC_URL + "./img/EveryInteract/post.png",
       alt: "post-pic"
     },
     info: {

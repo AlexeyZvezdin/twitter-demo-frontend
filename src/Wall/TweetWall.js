@@ -100,6 +100,7 @@ const WallPostText = styled.p`
   margin-bottom: 0;
 `;
 
+//Здесь надо в аттрз проверку поставить если сорс = 0 то никаких маржинов и дисплеев
 const WallPostImg = styled.img`
   width: 495px;
   object-fit: cover;
@@ -137,14 +138,14 @@ const Wall = () => {
   return (
     <WallBox>
       <WallMenu>
-        <WallLink to="/everyinteract/tweets/tweets">
+        <WallLink to="/EveryInteract/tweets/tweets">
           <span>Tweets</span>{" "}
         </WallLink>
-        <WallLink to="/everyinteract/tweets/replies">
+        <WallLink to="/EveryInteract/tweets/replies">
           {" "}
           <span>Tweets & replies </span>
         </WallLink>
-        <WallLink to="/everyinteract/tweets/media">
+        <WallLink to="/EveryInteract/tweets/media">
           {" "}
           <span>Media</span>{" "}
         </WallLink>
@@ -152,10 +153,10 @@ const Wall = () => {
 
       <WallContent>
         <Switch>
-          <Route path="/everyinteract/tweets" component={WallPost} />
-          <Route path="/everyinteract/tweets/tweets" component={WallPost} />
-          <Route path="/everyinteract/tweets/replies" component={WallPost} />
-          <Route path="/everyinteract/tweets/media" component={WallPost} />
+          <Route path="/EveryInteract/tweets" component={WallPost} />
+          <Route path="/EveryInteract/tweets/tweets" component={WallPost} />
+          <Route path="/EveryInteract/tweets/replies" component={WallPost} />
+          <Route path="/EveryInteract/tweets/media" component={WallPost} />
         </Switch>
       </WallContent>
     </WallBox>

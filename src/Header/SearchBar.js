@@ -78,11 +78,11 @@ const TweetButton = styled.button`
   background-color: #1da1f2;
   text-align: center;
   font-size: 14px;
-  &.hover {
+  &:hover {
     cursor: pointer;
     background-color: #1da1f2;
   }
-  &.focus {
+  &:focus {
     background-color: #4a8ef9;
   }
 `;
