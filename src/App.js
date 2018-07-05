@@ -38,7 +38,7 @@ class App extends Component {
           <Switch>
             <Route path="/EveryInteract" component={Profile} />
             <Redirect from="/" to="/EveryInteract/tweets" />
-            <Redirect from="/EveryInteract" to="/EveryInteract/tweets" />
+
             <Route component={NoPage} />
           </Switch>
         </BodyBlock>

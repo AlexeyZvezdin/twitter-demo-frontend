@@ -69,9 +69,26 @@ const UserWallPosts = [
 ];
 //Не так, придется брать данные из других профилей
 const WhoToFollow = [
+  // {
+  //   ava: {
+  //     src: JSON.parse(`process.env.PUBLIC_URL/EveryInteract.json`, function(
+  //       key,
+  //       value
+  //     ) {
+  //       key === "avatar" ? value : "";
+  //     }),
+  //     alt: "EveryInteractAva"
+  //   },
+  //   name: {
+  //     name: "EveryInteract",
+  //     tag: "@everyinteract"
+  //   },
+  //   link: "/EveryInteract"
+  //   // isConfirmed: EveryInteract.isConfirmed
+  // },
   {
     ava: {
-      src: `${publicUrl}/img/whotofollow/1.png`,
+      src: `${publicUrl}/img/AppleInsider/Ava.png`,
       alt: "AppleInsiderAva"
     },
     name: {
@@ -80,31 +97,31 @@ const WhoToFollow = [
     },
     link: "/appleinsider"
     // isConfirmed: AppleInsider.isConfirmed
-  },
-  {
-    ava: {
-      src: `${publicUrl}/img/whotofollow/2.png`,
-      alt: "CreodeAva"
-    },
-    name: {
-      name: "Creode",
-      tag: "@Creode"
-    },
-    link: "/creode"
-    // isConfirmed: Creode.isConfirmed
-  },
-  {
-    ava: {
-      src: `${publicUrl}/img/whotofollow/3.png`,
-      alt: "EpiphanyAva"
-    },
-    name: {
-      name: "Epiphany Search",
-      tag: "@EpiphanySearch"
-    },
-    link: "/epiphanysearch"
-    // isConfirmed: EpiphanySearch.isConfirmed
   }
+  // {
+  //   ava: {
+  //     src: `${publicUrl}/img/whotofollow/2.png`,
+  //     alt: "CreodeAva"
+  //   },
+  //   name: {
+  //     name: "Creode",
+  //     tag: "@Creode"
+  //   },
+  //   link: "/creode"
+  //   // isConfirmed: Creode.isConfirmed
+  // },
+  // {
+  //   ava: {
+  //     src: `${publicUrl}/img/whotofollow/3.png`,
+  //     alt: "EpiphanyAva"
+  //   },
+  //   name: {
+  //     name: "Epiphany Search",
+  //     tag: "@EpiphanySearch"
+  //   },
+  //   link: "/epiphanysearch"
+  //   // isConfirmed: EpiphanySearch.isConfirmed
+  // }
 ];
 
 export { EveryInteract, FollowersSrc, PhotosSrc, UserWallPosts, WhoToFollow };

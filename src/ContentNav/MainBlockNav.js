@@ -1,13 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
-import {
-  BodyBlock,
-  Col,
-  Row,
-  CommonBlock,
-  AsideBlock,
-  CentralBlock
-} from "../Grid";
+import { Row, CommonBlock, AsideBlock, CentralBlock } from "../Grid";
 import MainBlockMenu from "./MainBlockMenu";
 import RightBlockMenu from "./MainBlockRight";
 

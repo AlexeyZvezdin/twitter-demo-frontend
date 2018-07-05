@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import UserData from "../Profile/data/EveryInteractData";
+// import UserData from "../Profile/data/EveryInteractData";
 
 const FollowBox = styled.div`
   width: 290px;
@@ -47,20 +47,63 @@ const AdvisedUser = styled.div`
   background: lightblue;
 `;
 
-// const UserAva = styled.img.attrs((alt: "AppleInsider"), (src: {}))``;
+// src={JSON.parse(json, function(key, value) {
+//           key === "avatar" ? value : "";
+//         })}
+
+//   .attrs({
+//   alt: "AppleInsider",
+//   src: JSON.parse(`process.env.PUBLIC_URL/EveryInteract.json`, function(
+//     key,
+//     value
+//   ) {
+//     key === "avatar" ? value : "";
+//   })
+// })
+
+const UserAva = styled.img`
+  width: 50px;
+`;
 
 class FollowBlock extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      ProfileUrl: props,
+      Ava: null
+    };
+    console.log(this.state.ProfileUrl);
+  }
+
+  componentWillMount() {
+    fetch(`/img${this.state.ProfileUrl.data}/ava.png`)
+      .then(function(response) {
+        return response.blob();
+      })
+      .then(myBlob => {
+        console.log(myBlob);
+        var objectURL = URL.createObjectURL(myBlob);
+        console.log(objectURL);
+        this.setState({
+          Ava: objectURL
+        });
+      })
+      .catch(alert);
+  }
+
   render() {
     return (
       <FollowBox>
         <Head>
           <Title>Who to follow</Title>
-          <TitleActions to="/everyinteract">
+          <TitleActions to="/EveryInteract">
             <span>&#8194;•&#8194;</span>Refresh<span>&#8194;•&#8194;</span>
           </TitleActions>
-          <TitleActions to="/everyinteract">View All</TitleActions>
+          <TitleActions to="/EveryInteract">View All</TitleActions>
         </Head>
-        <UsersBlock />
+        <UsersBlock>
+          <UserAva src={this.state.Ava} />
+        </UsersBlock>
       </FollowBox>
     );
   }

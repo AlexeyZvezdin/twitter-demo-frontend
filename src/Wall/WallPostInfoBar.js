@@ -1,7 +1,7 @@
-import React, { Components } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Comments, Envelope, Loves, Retweet } from "../Icons/Icons";
-import UserWallPosts from "../Profile/data/EveryInteractData";
+// import UserWallPosts from "../Profile/data/EveryInteractData";
 
 const WallPostInfo = styled.div`
   display: flex;

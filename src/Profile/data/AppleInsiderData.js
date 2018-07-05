@@ -1,10 +1,11 @@
 const publicUrl = process.env.PUBLIC_URL;
 
 const AppleInsiderData = {
+  id: 2,
   name: "Apple Insider",
   tag: "@appleinsider",
   isConfirmed: false,
-  // isFollow: false,
+  isFollow: false,
   descriptionInfo: `UX Design studio focussed problem solving creativity. Design to us is
         how can we make things *work* amazing.`,
   location: "London, UK",

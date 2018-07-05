@@ -1,0 +1,50 @@
+{
+  "id": 1,
+  "name": "Every Interaction",
+  "tag": "@EveryInteract",
+  "isConfirmed": true,
+  "isFollow": true,
+  "descriptionInfo":
+    "UX Design studio focussed problem solving creativity. Design to us is how can we make things *work* amazing.",
+  "location": "London, UK",
+  "site": "everyinteraction.com",
+  "yearJoined": 2008,
+  "monthJoined": "May",
+  "avatar": "/img/EveryInteract/ava.png",
+  "wallPosts": [
+    {
+      "pinned": true,
+
+      "date": "2 Mar 2015",
+      "text":
+        "We've made some more resourses for all you wonderful #design folk everyinteraction.com/resourses/ #webdesign #UI",
+
+      "img": {
+        "src": "/img/EveryInteract/post.png",
+        "alt": "post-pic"
+      },
+      "info": {
+        "loves": 47,
+        "retweet": 17,
+        "comments": null
+      }
+    },
+    {
+      "pinned": false,
+
+      "date": "23h",
+      "text":
+        "Our new website concept; Taking you from... @ Every Interaction instagram.com/p/BNFGrfhBP3M/",
+
+      "img": {
+        "src": "",
+        "alt": ""
+      },
+      "info": {
+        "loves": 22,
+        "retweet": 11,
+        "comments": null
+      }
+    }
+  ]
+}
