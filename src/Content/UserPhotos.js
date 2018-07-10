@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { Videos } from "../Icons/Icons";
-import { PhotosSrc } from "../Profile/data/EveryInteractData";
+import { PhotosSrc } from "../Profile/data/WhoToFollow";
 
 const PhotosBox = styled.div`
   margin: 20px 0;

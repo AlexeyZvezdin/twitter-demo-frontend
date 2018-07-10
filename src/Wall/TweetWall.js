@@ -2,10 +2,7 @@ import React, { Components } from "react";
 import styled from "styled-components";
 import { Switch, NavLink, Route } from "react-router-dom";
 import WallPostInfoBar from "./WallPostInfoBar";
-import {
-  EveryInteract,
-  UserWallPosts
-} from "../Profile/data/EveryInteractData";
+import { UserWallPosts } from "../Profile/data/WhoToFollow";
 
 const WallBox = styled.div`
   margin-top: 8px;
@@ -108,30 +105,29 @@ const WallPostImg = styled.img`
 `;
 
 const WallPost = () => {
-  return (
-    <React.Fragment>
-      {UserWallPosts.map(
-        (info, index) =>
-          index < 2 ? (
-            <WallContainer>
-              <UserAva src={EveryInteract.avatar} alt="UserAvaMini" />
-              <WallPostContent>
-                <WallPostHead>
-                  <PostUserName>{EveryInteract.name}</PostUserName>
-                  <PostUserTagName> {EveryInteract.tag} ●</PostUserTagName>
-                  <PostUserPublishDate>{info.date}</PostUserPublishDate>
-                </WallPostHead>
-                <WallPostText>{info.text}</WallPostText>
-                <WallPostImg alt={info.img.alt} src={`/${info.img.src}`} />
-                <WallPostInfoBar data={info.info} />
-              </WallPostContent>
-            </WallContainer>
-          ) : (
-            false
-          )
-      )}
-    </React.Fragment>
-  );
+  return null;
+  // <React.Fragment>
+  //   {UserWallPosts.map(
+  //     (info, index) =>
+  //       index < 2 ? (
+  //         <WallContainer>
+  //           <UserAva src={EveryInteract.avatar} alt="UserAvaMini" />
+  //           <WallPostContent>
+  //             <WallPostHead>
+  //               <PostUserName>{EveryInteract.name}</PostUserName>
+  //               <PostUserTagName> {EveryInteract.tag} ●</PostUserTagName>
+  //               <PostUserPublishDate>{info.date}</PostUserPublishDate>
+  //             </WallPostHead>
+  //             <WallPostText>{info.text}</WallPostText>
+  //             <WallPostImg alt={info.img.alt} src={`/${info.img.src}`} />
+  //             <WallPostInfoBar data={info.info} />
+  //           </WallPostContent>
+  //         </WallContainer>
+  //       ) : (
+  //         false
+  //       )
+  //   )}
+  // </React.Fragment>
 };
 
 const Wall = () => {

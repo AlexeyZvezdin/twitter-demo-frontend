@@ -1,20 +1,5 @@
 const publicUrl = process.env.PUBLIC_URL;
 
-const EveryInteract = {
-  id: 1,
-  name: "Every Interaction",
-  tag: "@EveryInteract",
-  isConfirmed: true,
-  isFollow: true,
-  descriptionInfo: `UX Design studio focussed problem solving creativity. Design to us is
-        how can we make things *work* amazing.`,
-  location: "London, UK",
-  site: "everyinteraction.com",
-  yearJoined: 2008,
-  monthJoined: "May",
-  avatar: `${publicUrl}/img/EveryInteract/ava.png`
-};
-
 const FollowersSrc = [
   `${publicUrl}/img/EveryInteract/followers/1.png`,
   `${publicUrl}/img/EveryInteract/followers/2.png`,
@@ -124,4 +109,4 @@ const WhoToFollow = [
   // }
 ];
 
-export { EveryInteract, FollowersSrc, PhotosSrc, UserWallPosts, WhoToFollow };
+export { FollowersSrc, PhotosSrc, UserWallPosts, WhoToFollow };

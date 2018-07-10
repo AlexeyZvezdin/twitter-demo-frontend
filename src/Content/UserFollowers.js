@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { Followers, Videos } from "../Icons/Icons";
-import { FollowersSrc } from "../Profile/data/EveryInteractData";
+import { FollowersSrc } from "../Profile/data/WhoToFollow";
 
 const FollowersBox = styled.div`
   margin: 20px 0;

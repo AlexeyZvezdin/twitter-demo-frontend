@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { IconLocation, IconLink, IconJoined, Confirmed } from "../Icons/Icons";
 import { NavLink } from "react-router-dom";
-import { EveryInteract } from "../Profile/data/EveryInteractData";
 
 const LeftSideDiv = styled.div`
   margin-top: -190px;
@@ -28,7 +27,7 @@ const UserTagName = styled.div`
 `;
 
 const UserTagNameStatus = styled.div`
-  display: ${props => (EveryInteract.isFollow ? "inline" : "none")};
+  display: ${props => (props.isFollow ? "inline" : "none")};
   padding: 5px;
   color: #697787;
   font-size: 12px;
@@ -57,7 +56,7 @@ const UserConfirmed = styled.img`
   position: relative;
   top: 3px;
   margin-left: 5px;
-  display: ${props => (EveryInteract.isConfirmed ? "inline-block" : "none")};
+  display: ${props => (props.isConfirmed ? "inline-block" : "none")};
 `;
 
 const UserSite = styled.div`
@@ -116,53 +115,80 @@ const SocialButLink = styled(NavLink)`
   font-style: bold;
 `;
 
-const SocialButtonTweetTo = () => {
+const SocialButtonTweetTo = props => {
   return (
     <SocialBut right>
-      <SocialButLink to="/EveryInteraction">Tweet To</SocialButLink>
+      <SocialButLink to={props.data}>Tweet To</SocialButLink>
     </SocialBut>
   );
 };
 
-const SocialButtonMessage = () => {
+const SocialButtonMessage = props => {
   return (
     <SocialBut>
-      <SocialButLink to="/EveryInteraction">Message</SocialButLink>
+      <SocialButLink to={props.data}>Message</SocialButLink>
     </SocialBut>
   );
 };
 
-const UserProfile = () => {
-  return (
-    <LeftSideDiv>
-      <AvatarBlock src={EveryInteract.avatar} />
-      <UserName>
-        <span>{EveryInteract.name}</span>
-        <UserConfirmed src={Confirmed} alt="Tick" />
-      </UserName>
-      <UserTagName>{EveryInteract.tag}</UserTagName>
-      <UserTagNameStatus> Follows you </UserTagNameStatus>
-      <UserInfo>{EveryInteract.descriptionInfo}</UserInfo>
-      <UserLocation>
-        <img src={IconLocation} alt="Location" />
-        <span>{EveryInteract.location}</span>
-      </UserLocation>
-      <UserSite>
-        <img src={IconLink} alt="Site" />
-        <UserSiteLink to="/EveryInteract">{EveryInteract.site}</UserSiteLink>
-      </UserSite>
-      <UserJoined>
-        <img src={IconJoined} alt="Joined" />
-        <span>
-          Joined {EveryInteract.monthJoined} {EveryInteract.yearJoined}{" "}
-        </span>
-      </UserJoined>
-      <SocialButtons>
-        <SocialButtonTweetTo />
-        <SocialButtonMessage />
-      </SocialButtons>
-    </LeftSideDiv>
-  );
-};
+class UserProfile extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      userObject: ""
+    };
+  }
+
+  componentWillMount() {
+    fetch(`${this.props.data}.json`)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(myResponse => {
+        let userData = myResponse;
+
+        this.setState({
+          userObject: userData
+        });
+      })
+      .catch(alert);
+  }
+
+  render() {
+    return (
+      <LeftSideDiv>
+        <AvatarBlock src={this.state.userObject.avatar} />
+        <UserName>
+          <span>{this.state.userObject.name}</span>
+          <UserConfirmed src={Confirmed} alt="Tick" />
+        </UserName>
+        <UserTagName>{this.state.userObject.tag}</UserTagName>
+        <UserTagNameStatus> Follows you </UserTagNameStatus>
+        <UserInfo>{this.state.userObject.descriptionInfo}</UserInfo>
+        <UserLocation>
+          <img src={IconLocation} alt="Location" />
+          <span>{this.state.userObject.location}</span>
+        </UserLocation>
+        <UserSite>
+          <img src={IconLink} alt="Site" />
+          <UserSiteLink to={this.props.data}>
+            {this.state.userObject.site}
+          </UserSiteLink>
+        </UserSite>
+        <UserJoined>
+          <img src={IconJoined} alt="Joined" />
+          <span>
+            Joined {this.state.userObject.yearJoined}{" "}
+            {this.state.userObject.monthJoined}
+          </span>
+        </UserJoined>
+        <SocialButtons>
+          <SocialButtonTweetTo data={this.props.data} />
+          <SocialButtonMessage data={this.props.data} />
+        </SocialButtons>
+      </LeftSideDiv>
+    );
+  }
+}
 
 export default UserProfile;

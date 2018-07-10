@@ -8,6 +8,7 @@ const RightSide = styled.div`
   position: relative;
   align-items: center;
   background: white;
+  justify-content: flex-end;
 `;
 
 const ButtonFollow = styled.button`
@@ -59,6 +60,7 @@ const RightMenu = styled.div`
   position: absolute;
   top: 60px;
   right: 0px;
+  z-index: 999;
 `;
 
 const MenuBox = styled.div`

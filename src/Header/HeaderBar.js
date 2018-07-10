@@ -66,33 +66,33 @@ const BarLink = styled(NavLink)`
   }
 `;
 
-const HeaderBar = () => {
+const HeaderBar = props => {
   return (
     <HeaderBlock>
       <NavContainer>
         <NavBar>
-          <BarLink to="/everyinteract">
+          <BarLink to={props.userUrl}>
             <img src={IconHome} alt="Icon Home" />
             <span>Home</span>
           </BarLink>
 
-          <BarLink to="/everyinteract">
+          <BarLink to={props.userUrl}>
             <img src={IconMoments} alt="Icon Moments" />
             <span>Moments</span>
           </BarLink>
 
-          <BarLink to="/everyinteract">
+          <BarLink to={props.userUrl}>
             <img src={IconNotifications} alt="Icon Notifications" />
             <span> Notifications</span>
           </BarLink>
 
-          <BarLink to="/everyinteract">
+          <BarLink to={props.userUrl}>
             <img src={IconMessages} alt="Icon Messages" />
             <span>Messages</span>
           </BarLink>
         </NavBar>
         <TwitterBird src={TwitterLogo} alt="Twitter" />
-        <SearchBar />
+        <SearchBar userUrl={props.userUrl} />
       </NavContainer>
     </HeaderBlock>
   );

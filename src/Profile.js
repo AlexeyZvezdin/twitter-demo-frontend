@@ -8,11 +8,12 @@ import MainBlockNav from "./ContentNav/MainBlockNav";
 import MainBlock from "./Content/MainBlock";
 
 class Profile extends Component {
-  state = {
-    user: this.props.match.url
-  };
+  // state = {
+  //   user: this.props.match.url
+  // };
   componentDidMount() {
-    console.log(this.state.user);
+    let user = this.props.match.url;
+    console.log(user);
   }
   // constructor(props) {
   //   super(props);
@@ -41,13 +42,13 @@ class Profile extends Component {
     return (
       <Grid>
         <Row>
-          <HeaderBar />
+          <HeaderBar userUrl={this.props.match.url} />
           <BackPic
             alt="Picture"
             src={`/${process.env.PUBLIC_URL + "./img/EveryInteract/back.png"}`}
           />
           <MainBlockNav />
-          <MainBlock userUrl={this.state.user} />
+          <MainBlock userUrl={this.props.match.url} />
         </Row>
       </Grid>
     );

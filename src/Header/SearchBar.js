@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import styled, { css } from "styled-components";
 import IconMagnifier from "../Icons/source/Magnifier.svg";
-import { EveryInteract } from "../Profile/data/EveryInteractData";
 
 const RightContainer = styled.div`
   display: flex;
@@ -55,7 +54,7 @@ const SearchButton = styled.button`
 `;
 
 const UserAvatar = styled.img.attrs({
-  src: EveryInteract.avatar
+  alt: "avatar"
 })`
   margin: 8px 16px;
   height: 30px;
@@ -87,7 +86,7 @@ const TweetButton = styled.button`
   }
 `;
 
-const SearchBar = () => (
+const SearchBar = props => (
   <RightContainer>
     <SearchBox>
       <SearchForm>
@@ -95,7 +94,7 @@ const SearchBar = () => (
         <SearchButton />
       </SearchForm>
     </SearchBox>
-    <UserAvatar />
+    <UserAvatar src={process.env.PUBLIC_URL + `/img${props.userUrl}/Ava.png`} />
     <TweetButton> Tweet </TweetButton>
   </RightContainer>
 );
