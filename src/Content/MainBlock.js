@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import { CommonBlock, Row, AsideBlock, CentralBlock } from "../Grid";
-import UserProfile from "./UserProfile";
-import Wall from "../Wall/TweetWall";
-import { Followers } from "../Profile/data/WhoToFollow";
-import { Route } from "react-router-dom";
-import UserFollowers from "./UserFollowers";
-import Photos from "./UserPhotos";
-import FollowBlock from "./FollowBlock";
-import TrendBlock from "./Trends";
-import Footer from "./Footer";
+import React, { Component } from 'react';
+import { CommonBlock, Row, AsideBlock, CentralBlock } from '../Grid';
+import UserProfile from './UserProfile';
+import Wall from '../Wall/TweetWall';
+import { Followers } from '../Profile/data/WhoToFollow';
+import { Route } from 'react-router-dom';
+import UserFollowers from './UserFollowers';
+import Photos from './UserPhotos';
+import FollowBlock from './FollowBlock';
+import TrendBlock from './Trends';
+import Footer from './Footer';
 
 class MainBlock extends Component {
   // constructor(props) {
@@ -16,6 +16,7 @@ class MainBlock extends Component {
   //   this.state = { ProfileUrl: props.userUrl };
   // }
   render() {
+    console.log(this.props.userUrl);
     return (
       <Row>
         <CommonBlock>

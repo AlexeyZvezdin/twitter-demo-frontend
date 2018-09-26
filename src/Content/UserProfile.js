@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { IconLocation, IconLink, IconJoined, Confirmed } from "../Icons/Icons";
-import { NavLink } from "react-router-dom";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import { IconLocation, IconLink, IconJoined, Confirmed } from '../Icons/Icons';
+import { NavLink } from 'react-router-dom';
 
 const LeftSideDiv = styled.div`
   margin-top: -190px;
@@ -27,7 +27,7 @@ const UserTagName = styled.div`
 `;
 
 const UserTagNameStatus = styled.div`
-  display: ${props => (props.isFollow ? "inline" : "none")};
+  display: ${props => (props.isFollow ? 'inline' : 'none')};
   padding: 5px;
   color: #697787;
   font-size: 12px;
@@ -56,7 +56,7 @@ const UserConfirmed = styled.img`
   position: relative;
   top: 3px;
   margin-left: 5px;
-  display: ${props => (props.isConfirmed ? "inline-block" : "none")};
+  display: ${props => (props.isConfirmed ? 'inline-block' : 'none')};
 `;
 
 const UserSite = styled.div`
@@ -100,7 +100,7 @@ const SocialBut = styled.button`
   display: inline-block;
   border-radius: 100px;
   background: #1da1f2;
-  margin-right: ${props => (props.right ? "8px" : "")};
+  margin-right: ${props => (props.right ? '8px' : '')};
   border: none;
   outline: none;
   padding: 0;
@@ -132,55 +132,52 @@ const SocialButtonMessage = props => {
 };
 
 class UserProfile extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      userObject: ""
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     userObject: ""
+  //   };
+  // }
 
-  componentWillMount() {
-    fetch(`${this.props.data}.json`)
-      .then(function(response) {
-        return response.json();
-      })
-      .then(myResponse => {
-        let userData = myResponse;
+  // componentDidMount() {
+  //   fetch(`${this.props.data}.json`)
+  //     .then(function(response) {
+  //       return response.json();
+  //     })
+  //     .then(myResponse => {
+  //       let userData = myResponse;
 
-        this.setState({
-          userObject: userData
-        });
-      })
-      .catch(alert);
-  }
+  //       this.setState({
+  //         userObject: userData
+  //       });
+  //     })
+  //     .catch(alert);
+  // }
 
   render() {
     return (
       <LeftSideDiv>
-        <AvatarBlock src={this.state.userObject.avatar} />
+        <AvatarBlock src={this.props.data.avatar} />
         <UserName>
-          <span>{this.state.userObject.name}</span>
+          <span>{this.props.data.display_name}</span>
           <UserConfirmed src={Confirmed} alt="Tick" />
         </UserName>
-        <UserTagName>{this.state.userObject.tag}</UserTagName>
+        <UserTagName>@{this.props.data.username}</UserTagName>
         <UserTagNameStatus> Follows you </UserTagNameStatus>
-        <UserInfo>{this.state.userObject.descriptionInfo}</UserInfo>
+        <UserInfo>{this.props.data.note}</UserInfo>
         <UserLocation>
           <img src={IconLocation} alt="Location" />
-          <span>{this.state.userObject.location}</span>
+          <span>{this.props.data.location}</span>
         </UserLocation>
         <UserSite>
           <img src={IconLink} alt="Site" />
           <UserSiteLink to={this.props.data}>
-            {this.state.userObject.site}
+            {this.props.data.url}
           </UserSiteLink>
         </UserSite>
         <UserJoined>
           <img src={IconJoined} alt="Joined" />
-          <span>
-            Joined {this.state.userObject.yearJoined}{" "}
-            {this.state.userObject.monthJoined}
-          </span>
+          <span>Joined {this.props.data.created_at}</span>
         </UserJoined>
         <SocialButtons>
           <SocialButtonTweetTo data={this.props.data} />
